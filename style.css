@@ -1,0 +1,183 @@
+/* 1. Fundo com Gradiente Moderno */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f 0%, #0f0f1a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+/* 2. Container com Efeito de Vidro (Glassmorphism) */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px); /* O segredo do efeito embaçado */
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;    
+    letter-spacing: 4px;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #00d2ff; /* Um azul neon para destacar */
+}
+
+.typewriter h1 {
+  color: #00d2ff;
+  font-family: 'Orbitron', sans-serif; /* Ou uma fonte monoespaçada */
+  overflow: hidden; /* Garante que o texto não apareça antes da animação */
+  border-right: .15em solid #00d2ff; /* O cursor da máquina */
+  white-space: nowrap; /* Mantém o texto em uma linha só */
+  margin: 0 auto 30px auto; 
+  letter-spacing: .15em; 
+  
+  /* Chamada das animações: 
+     typing = escrever 
+     blink-caret = cursor piscando */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+  
+  width: fit-content; /* Faz o container se ajustar ao tamanho do texto */
+}
+
+/* Animação que faz o texto "aparecer" */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #00d2ff }
+}
+
+/* 3. Área de Entrada */
+.input-group {
+    display: flex;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px;
+    color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+#addTaskButton {
+    background: #00d2ff;
+    color: #1e1e2f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#addTaskButton:hover {
+    background: #33e0ff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+}
+
+/* 4. Estilo das Tarefas */
+li {
+    font-family: 'Inter', sans-serif;
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+li:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(0, 210, 255, 0.3);
+}
+
+span {
+    flex: 1;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* 5. Botões de Ação Dinâmicos */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    filter: grayscale(1); /* Deixa os emojis neutros até passar o mouse */
+    transition: 0.2s;
+}
+
+button:hover {
+    filter: grayscale(0);
+    transform: scale(1.2);
+}
+
+/* Media Query para Celulares */
+@media (max-width: 600px) {
+    /* Media Query para Celulares - Focada em Centralização */
+@media (max-width: 600px) {
+    .container {
+        width: 90%; 
+        padding: 20px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza tudo que está dentro do container */
+    }
+
+    .input-group {
+        flex-direction: column; 
+        align-items: center;    /* Centraliza o input e o botão horizontalmente */
+        background: none;       
+        width: 100%;            /* Ocupa a largura total para poder centralizar o que está dentro */
+        gap: 15px;              /* Dá um espaço maior entre o input e o botão */
+    }
+
+    input {
+        width: 100%;           
+        text-align: center;     /* Opcional: centraliza o texto que você digita */
+        box-sizing: border-box; 
+    }
+
+    #addTaskButton {
+        width: fit-content;    /* Garante que o botão só tenha o tamanho do texto */
+        display: block;        /* Ajuda na centralização */
+        margin: 0 auto;        /* Margem automática nas laterais força o centro */
+        padding: 12px 25px;    /* Um pouco mais de área para clicar no celular */
+    }
+
+    /* Ajuste para o efeito de máquina de escrever não quebrar no centro */
+    .typewriter h1 {
+        font-size: 1.1rem;     
+        margin: 0 auto 20px auto; 
+        text-align: center;
+    }
+}
+}
