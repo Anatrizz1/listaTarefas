@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/imagem/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="entrada-de-dados">
@@ -15,6 +16,13 @@
         </div>
         <input type="text" id="taskInput" placeholder="Digite uma nova tarefa...">
         <button onclick="addTask()" id="addTaskButton">Adicionar Tarefa</button>
+        
+        <div id = "filterGroup" class ="filter-group"  >
+            <button onclick="filterAll()" id="filterAll">Mostrar Todas</button>
+            <button onclick="filterCompleted()" id="filterCompleted">Completas</button>
+            <button onclick="filterPending()" id="filterPending">Pendentes</button>
+        </div>
+        
         <ul id="taskList"></ul>
     </div>
 
